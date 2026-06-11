@@ -1,0 +1,348 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   1971 Plymouth RoadRunner — Dashboard Theme
+   MOPAR High-Impact muscle car cockpit
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Body Colors (High-Impact MOPAR palette) ────────────────────────────── */
+  --hemi-orange:       #FF6B00;
+  --hemi-orange-glow:  rgba(255, 107, 0, 0.4);
+  --plum-crazy:        #7B2D8B;
+  --sublime-green:     #A4D233;
+  --tor-red:           #CC2200;
+  --curious-yellow:    #FFD700;
+
+  /* ── Dash Interior ──────────────────────────────────────────────────────── */
+  --vinyl-black:       #0D0D0D;
+  --vinyl-dark:        #1A1A1A;
+  --vinyl-mid:         #262626;
+  --vinyl-grain:       #2A2A2A;
+  --dash-charcoal:     #1E1E1E;
+
+  /* ── Chrome & Metal ─────────────────────────────────────────────────────── */
+  --chrome-bright:     #E0E0E0;
+  --chrome-mid:        #A8A8A8;
+  --chrome-dark:       #6B6B6B;
+  --brushed-steel:     #4A4A52;
+
+  /* ── Gauge Readouts ─────────────────────────────────────────────────────── */
+  --phosphor-green:    #39FF14;
+  --phosphor-dim:      rgba(57, 255, 20, 0.3);
+  --gauge-face:        #111111;
+  --gauge-white:       #F0F0E8;
+  --redline:           #FF1A1A;
+  --warning-amber:     #FFAA00;
+
+  /* ── Fonts ──────────────────────────────────────────────────────────────── */
+  --font-gauge:        'Share Tech Mono', monospace;
+  --font-muscle:       'Russo One', sans-serif;
+  --font-display:      'Oswald', sans-serif;
+}
+
+/* ── Global Reset ────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--vinyl-black);
+  color: var(--gauge-white);
+  font-family: var(--font-gauge);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Vinyl Dash Texture ──────────────────────────────────────────────────────── */
+.vinyl-dash {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.008) 2px,
+      rgba(255,255,255,0.008) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.008) 2px,
+      rgba(255,255,255,0.008) 4px
+    ),
+    var(--vinyl-dark);
+}
+
+/* ── Chrome Bezel (wraps gauge panels) ───────────────────────────────────────── */
+.chrome-bezel {
+  border: 2px solid var(--chrome-mid);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 var(--chrome-bright),
+    inset 0 -1px 0 var(--chrome-dark),
+    0 0 15px rgba(0,0,0,0.6),
+    0 0 2px var(--chrome-dark);
+  background: var(--gauge-face);
+  position: relative;
+  overflow: hidden;
+}
+
+.chrome-bezel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--chrome-bright) 30%, var(--chrome-bright) 70%, transparent);
+  opacity: 0.5;
+}
+
+/* ── Gauge Panel (dark recessed area inside chrome) ──────────────────────────── */
+.gauge-panel {
+  background: radial-gradient(ellipse at center, #151515 0%, #0a0a0a 100%);
+  border-radius: 8px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+/* ── Digital Readout (phosphor green numbers) ────────────────────────────────── */
+.digital-readout {
+  font-family: var(--font-gauge);
+  color: var(--phosphor-green);
+  text-shadow:
+    0 0 6px var(--phosphor-green),
+    0 0 20px var(--phosphor-dim);
+  letter-spacing: 0.05em;
+}
+
+.digital-readout-dim {
+  font-family: var(--font-gauge);
+  color: var(--phosphor-dim);
+  letter-spacing: 0.05em;
+}
+
+/* ── Hemi Orange Accent ──────────────────────────────────────────────────────── */
+.hemi-accent {
+  color: var(--hemi-orange);
+  text-shadow: 0 0 10px var(--hemi-orange-glow);
+}
+
+.hemi-glow {
+  box-shadow: 0 0 20px var(--hemi-orange-glow), 0 0 40px rgba(255,107,0,0.15);
+}
+
+/* ── Engine Rev Button ───────────────────────────────────────────────────────── */
+.rev-btn {
+  font-family: var(--font-muscle);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vinyl-black);
+  background: linear-gradient(180deg, var(--hemi-orange) 0%, #CC5500 100%);
+  border: 2px solid var(--chrome-mid);
+  border-radius: 8px;
+  padding: 0.7rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow:
+    0 2px 8px rgba(255,107,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.rev-btn:hover {
+  background: linear-gradient(180deg, #FF8533 0%, var(--hemi-orange) 100%);
+  box-shadow:
+    0 0 20px var(--hemi-orange-glow),
+    0 4px 12px rgba(255,107,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  transform: translateY(-1px);
+}
+
+.rev-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(255,107,0,0.3);
+}
+
+/* ── Secondary Buttons ───────────────────────────────────────────────────────── */
+.chrome-btn {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gauge-white);
+  background: linear-gradient(180deg, var(--brushed-steel) 0%, #333 100%);
+  border: 1px solid var(--chrome-dark);
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chrome-btn:hover {
+  background: linear-gradient(180deg, var(--chrome-dark) 0%, var(--brushed-steel) 100%);
+  border-color: var(--chrome-mid);
+}
+
+/* ── Tier Cards ──────────────────────────────────────────────────────────────── */
+.tier-card {
+  background: var(--vinyl-dark);
+  border: 2px solid var(--chrome-dark);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tier-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--chrome-dark);
+}
+
+.tier-card:hover {
+  border-color: var(--hemi-orange);
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.5),
+    0 0 20px var(--hemi-orange-glow);
+}
+
+.tier-card:hover::before {
+  background: var(--hemi-orange);
+}
+
+.tier-card.featured {
+  border-color: var(--hemi-orange);
+}
+
+.tier-card.featured::before {
+  background: var(--hemi-orange);
+}
+
+/* ── Tachometer Needle Animation ─────────────────────────────────────────────── */
+@keyframes tach-rev {
+  0%   { transform: rotate(-120deg); }
+  40%  { transform: rotate(60deg); }
+  60%  { transform: rotate(40deg); }
+  80%  { transform: rotate(80deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+@keyframes tach-idle {
+  0%, 100% { transform: rotate(-120deg); }
+  50%      { transform: rotate(-110deg); }
+}
+
+.tach-needle {
+  transform-origin: 50% 85%;
+  animation: tach-idle 2s ease-in-out infinite;
+}
+
+.tach-needle.revving {
+  animation: tach-rev 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+
+/* ── Redline Zone Pulse ──────────────────────────────────────────────────────── */
+@keyframes redline-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+.redline-zone {
+  animation: redline-pulse 0.5s ease-in-out infinite;
+}
+
+/* ── Gauge Sweep Animation (on page load) ────────────────────────────────────── */
+@keyframes gauge-sweep {
+  0%   { stroke-dashoffset: 283; }
+  100% { stroke-dashoffset: var(--final-offset); }
+}
+
+/* ── Data Table (bet sheet) ──────────────────────────────────────────────────── */
+.bet-sheet {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-gauge);
+  font-size: 0.85rem;
+}
+
+.bet-sheet thead {
+  border-bottom: 2px solid var(--hemi-orange);
+}
+
+.bet-sheet th {
+  color: var(--hemi-orange);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.bet-sheet td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--vinyl-grain);
+  color: var(--gauge-white);
+}
+
+.bet-sheet tr:hover td {
+  background: rgba(255, 107, 0, 0.05);
+}
+
+.edge-positive {
+  color: var(--phosphor-green);
+}
+
+.edge-negative {
+  color: var(--tor-red);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vinyl-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brushed-steel);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-dark);
+}
+
+/* ── Utility ─────────────────────────────────────────────────────────────────── */
+.text-hemi     { color: var(--hemi-orange); }
+.text-phosphor { color: var(--phosphor-green); }
+.text-chrome   { color: var(--chrome-mid); }
+.text-redline  { color: var(--redline); }
+.text-amber    { color: var(--warning-amber); }
+
+.bg-vinyl      { background: var(--vinyl-dark); }
+.bg-gauge      { background: var(--gauge-face); }
+
+.font-muscle   { font-family: var(--font-muscle); }
+.font-display  { font-family: var(--font-display); }
+.font-gauge    { font-family: var(--font-gauge); }
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .tier-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

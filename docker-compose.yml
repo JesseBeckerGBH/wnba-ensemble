@@ -83,6 +83,24 @@ services:
         max-size: "50m"
         max-file: "5"
 
+  node_nba:
+    build:
+      context: .
+      dockerfile: ./node_nba_engine/Dockerfile
+    depends_on:
+      - timescaledb
+    restart: unless-stopped
+    env_file:
+      - ./node_nba_engine/.env
+    volumes:
+      - nba_db:/app/node_nba_engine/db
+      - nba_models:/app/node_nba_engine/model/artifacts
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+
   node_darts_cv:
     build:
       context: .
@@ -97,3 +115,5 @@ volumes:
   timescaledb-data:
   tt_db:
   tt_data:
+  nba_db:
+  nba_models:

@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+model/artifacts/
+db/*.duckdb
+db/*.duckdb.wal
+*.onnx
