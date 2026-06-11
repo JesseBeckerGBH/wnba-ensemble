@@ -1,0 +1,6 @@
+[build]
+builder = "nixpacks"
+watch = ["killershades-web/**", "node_wnba_engine/**"]
+
+[deploy]
+startCommand = "cd killershades-web && npm run dev"

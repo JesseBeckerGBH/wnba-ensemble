@@ -1,0 +1,26 @@
+# Environment Variables (NEVER PUSH THESE)
+.env
+.env.local
+
+# Node.js
+node_modules/
+dist/
+build/
+npm-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Databases
+*.duckdb
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db

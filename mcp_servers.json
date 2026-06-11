@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "timescaledb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://syndicate_admin:supersecretpassword@127.0.0.1:5432/syndicate_db"
+      ]
+    }
+  }
+}

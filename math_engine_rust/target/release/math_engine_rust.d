@@ -1,0 +1,1 @@
+C:\Users\Home\.gemini\antigravity\scratch\math_engine_rust\target\release\math_engine_rust.exe: C:\Users\Home\.gemini\antigravity\scratch\math_engine_rust\src\lib.rs C:\Users\Home\.gemini\antigravity\scratch\math_engine_rust\src\main.rs

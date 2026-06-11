@@ -1,0 +1,726 @@
+Relativistic statistical arbitrage
+A. D. Wissner-Gross1,* and C. E. Freer 2,†
+1The MIT Media Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA
+2Department of Mathematics, Massachusetts Institute of Technology, Cambridge, Massachusetts 02139, USA
+/H20849Received 29 July 2010; revised manuscript received 10 October 2010; published 5 November 2010 /H20850
+Recent advances in high-frequency ﬁnancial trading have made light propagation delays between geographi-
+cally separated exchanges relevant. Here we show that there exist optimal locations from which to coordinate
+the statistical arbitrage of pairs of spacelike separated securities, and calculate a representative map of such
+locations on Earth. Furthermore, trading local securities along chains of such intermediate locations results in
+a novel econophysical effect, in which the relativistic propagation of tradable information is effectively slowed
+or stopped by arbitrage.
+DOI: 10.1103/PhysRevE.82.056104 PACS number/H20849s/H20850: 89.65.Gh, 05.40. /H11002a, 05.45.Xt
+I. INTRODUCTION
+Recent advances in high-frequency ﬁnancial trading have
+brought typical trading latencies below 500 /H9262s /H208511/H20852, at which
+point light propagation delays due to geographically sepa-
+rated information sources become relevant for trading strat-
+egies and coordination /H20849e.g., it takes 67 ms, over 100 times
+longer, for light to travel between antipodal points along the
+Earth’s surface/H20850. Moreover, as trading times continue to de-
+crease in coming years /H20849e.g., latencies in the microseconds
+are already being targeted by traders /H208512/H20852/H20850, this feature will
+become even more pronounced.
+Here we report a relativistic generalization of statistical
+arbitrage trading strategies /H208513–5/H20852for spacelike separated
+trading locations. In particular, we report two major ﬁndings.
+First, we prove that there exist optimal intermediate locations
+between trading centers that host cointegrated /H208516,7/H20852securities
+such that coordination of arbitrage trading from those inter-
+mediate points maximizes proﬁt potential in a locally audit-
+able manner. For concreteness, we calculate a representative
+map of such intermediate locations assuming simpliﬁed be-
+havior by securities at the world’s largest existing trading
+centers. Second, we show that if such intermediate coordina-
+tion nodes are themselves promoted to trading centers that
+can utilize local information, a novel econophysical effect
+arises wherein the propagation of security pricing informa-
+tion through a chain of such nodes is effectively slowed or
+stopped.
+Financial background
+Cointegration provides a particularly useful notion of cor-
+relation between time series. A pair of time series x, y is said
+to be cointegrated if neither x nor y is a stationary stochastic
+process, but some nontrivial linear combination of x and y
+/H20849given by a cointegrating vector/H20850is stationary /H208516,7/H20852. Because
+of this stationarity, the linear combination described by the
+cointegrating vector will exhibit long-term reversion toward
+an equilibrium value /H208516–9/H20852.
+Within ﬁnancial markets, the relevant time series are typi-
+cally the logarithms of the prices /H20849log-prices/H20850of ﬁnancial
+instruments. Some of the simpler instances of cointegrated
+time series arise from interchangeable ﬁnancial products,
+whose prices will therefore not drift far apart /H208516/H20852. Such pairs
+should be expected for commodities or foreign currencies
+that are traded in multiple markets, and for stocks that are
+cross-listed /H20849e.g., via American or Global Depository Re-
+ceipts/H20850/H208516,8,10/H20852. Likewise, futures and spot prices form a
+cointegrated pair for stock indexes /H2085111/H20852and foreign curren-
+cies /H2085112/H20852. More generally, cointegrated time series have been
+found among pairs of highly correlated stocks /H208519,13/H20852, larger
+portfolios of stocks /H2085114/H20852, and groups of foreign currency ex-
+change rates /H2085115/H20852. While entire ﬁnancial markets are not
+thought to themselves exhibit mean reversion in log-prices
+/H2085116,17/H20852, rapid convergence to equilibrium has been found to
+hold empirically for the difference in log-prices of cross-
+listed securities /H20849up to a small premium/H20850/H2085110,18–20
+/H20852, and to a
+lesser, but substantial, degree for linear combinations of for-
+eign currency exchange rates /H2085115,21/H20852and highly-correlated
+stock pairs /H2085113,22/H20852.
+To describe the behavior of correlated ﬁnancial instru-
+ments, we will use the Vasicek model /H2085123/H20852, which is based on
+elastic Brownian motion given by an Ornstein-Uhlenbeck
+process /H2085124/H20852and which can be viewed /H2085125/H20852as a continuous
+limit of the Ehrenfest urn model of diffusion /H2085126/H20852. The Va-
+sicek model was originally introduced to model a tendency
+toward long-term mean reversion in the term structure of
+interest rates, but has proven to be a ﬂexible general model
+for ﬁnancial assets that exhibit mean reversion /H2085127–29/H20852.
+Ornstein-Uhlenbeck processes, and their reﬁnements, have
+also been used to model stochastic /H20849rather than constant /H20850
+volatility within a wide variety of more complex models for
+interest rates and stock prices /H2085130–40/H20852. More recently, the
+Vasicek model has been used to model pairs trading strate-
+gies /H2085141–43/H20852/H20849e.g., between stocks for highly correlated com-
+panies in the same industry /H20850.
+*alexwg@post.harvard.edu
+†Present address: Department of Mathematics, Univer-
+sity of Hawai‘i at M ānoa, Honolulu, Hawai‘i 96822, USA;
+freer@math.mit.edu
+PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+1539-3755/2010/82/H208495/H20850/056104/H208497/H20850 ©2010 The American Physical Society056104-1
+
+---PAGE---
+
+II. DISCRETE MODEL
+We begin by considering the coordination of trades in-
+volving two correlated, but spacelike separated, ﬁnancial in-
+struments from a single intermediate location. For concrete-
+ness, we will speak of securities /H20849e.g., stocks or bonds /H20850,
+although the same analysis applies to any rapidly traded and
+highly liquid ﬁnancial instruments, including derivatives
+/H20849e.g., options, futures, forwards, or swaps /H20850on an underlying
+asset /H20849e.g., stock, currency, commodity, or index /H20850.
+A. Spatially-separated Vasicek model
+Under the Vasicek model for pairs trading, one typically
+considers two colocated securities whose log-prices are coin-
+tegrated /H2085113,41/H20852. Suppose the cointegrating linear combina-
+tion r/H20849t/H20850has long-term mean b, speed of reversion a, and
+instantaneous volatility
+/H9268. Then r/H20849t/H20850is given by
+dr/H20849t/H20850= a/H20849b − r/H20849t/H20850/H20850dt + /H9268dW/H20849t/H20850, /H208491/H20850
+where W/H20849t/H20850is a Wiener process determined by local condi-
+tions.
+Here we instead consider the case of two trading centers,
+with a spacelike geodesic separation of c/H9270, that respectively
+host cointegrated securities having log-prices x/H20849t/H20850, y/H20849t/H20850, local
+speeds of reversion ax , ay, and instantaneous volatilities
+/H9268x , /H9268y. In the case of cross-listed and dual-listed securities
+/H20849which are already spacelike separated, hence amenable to
+this analysis/H20850, one can take the cointegrating linear combina-
+tion to be simply the difference in log-prices /H20849i.e., cointegrat-
+ing vector /H208491,−1 /H20850/H20850, which will have long-term mean b=0
+because the securities are essentially interchangeable
+/H208516,18,20/H20852.
+Even in more general pairs trading, the cointegrating vec-
+tor can often be taken to be approximately /H208491,−1 /H20850, with drift
+term b /H110150 /H2085113/H20852. Beyond pairs, one could construct such coin-
+tegrated linear combinations of securities—one at each spa-
+tially separated site /H20849e.g., using principal component analysis
+/H2085144/H20852at each site /H20850. Furthermore, many other tradable cointe-
+grated time series also exhibit vector /H208491,−1 /H20850and drift 0 /H20849e.g.,
+in futures and spot prices for stock indexes /H2085111/H20852and foreign
+currencies /H2085112/H20852, and in macroeconomic indicators /H2085145,46/H20852/H20850.
+Hence we will work under the assumption that x− y is sta-
+tionary with long-term mean 0.
+Let V/H20849t/H20850, W/H20849t/H20850be independent Wiener noise sources. Then
+the decoupled Vasicek processes are
+dx/H20849t/H20850=− a
+xx/H20849t/H20850dt + /H9268xdV/H20849t/H20850, /H208492a/H20850
+dy/H20849t/H20850=− ayy/H20849t/H20850dt + /H9268ydW/H20849t/H20850. /H208492b/H20850
+Now consider an intermediate node along the geodesic at
+distance c/H9004t from the center hosting the security with log-
+price x, capable of issuing pair trading orders instantaneously
+at communication speed c based on locally available infor-
+mation /H20849see Fig. 1/H20850.
+Traditionally, such pair trades are triggered when the ratio
+between the two security prices leaves its historical statistical
+bound /H2085141,42/H20852. The securities are then unloaded after they
+equilibrate, and so ultimate proﬁt derives from maximizing
+the statistical signiﬁcance of the ratio at the times of execu-
+tion. In contrast, in our arrangement, proﬁt is also deter-
+mined by the locations of execution and we will therefore
+want to identify intermediate trading node locations /H20849/H9004t/H20850that
+maximize the security ratio at the respective executions.
+Of course, any such intermediate node would lie on the
+past light cones of both trading centers, which could together
+emulate any prearranged coordination strategy by the node.
+However, emulation would be problematic: although the net
+position would remain nearly market neutral, this fact could
+not be guaranteed at either center in real time. A trader emu-
+lating an intermediate strategy would occasionally hold a
+very long position at one center and very short at the other,
+and so it is essential that the trader be able to convince the
+ﬁnancial exchanges at both centers that the net position is
+small in comparison with the position at either center to
+avoid onerous capital requirements.
+In traditional trading with a single exchange, positions
+that offset each other typically incur reduced margin require-
+ments /H2085147,48/H20852. However, a dishonest trader in the relativistic
+scenario, claiming falsely to implement an emulated strategy,
+could make unfair use of these reduced requirements, if al-
+lowed to do so, and hence only a guarantee of both transac-
+tions should sufﬁce. With an actual intermediate node, this
+guarantee could be provided by a local audit. For example,
+immediately following a pair trade, the intermediate node
+could transmit a message to each center, cryptographically
+signed by a trusted local agency, certifying that an offsetting
+order to the other center /H20849that is guaranteed to be ﬁlled, such
+as a market order /H20850had just been issued. In contrast, a trader
+not using an intermediate node could not issue such audits in
+real time. In order to avoid capital requirements commensu-
+rate with the possible position accumulated during the light
+propagation delay, such a trader could prearrange audits
+/H20849e.g., by making the entire strategy public in advance /H20850.I n
+doing so, though, that trader would then become unable to
+adapt strategies based on local events, thereby incurring ad-
+ditional risk compared to a local trader at an intermediate
+node. Therefore, there is substantial justiﬁcation for arbitrage
+from true intermediate nodes.
+B. Calculation of optimal intermediate trading locations
+Returning to our analysis of the optimal intermediate node
+location /H20849/H9004t/H20850, let us now assume, without loss of generality,
+FIG. 1. Space-time diagram of relativistic arbitrage transaction.
+Security price updates from spacelike separated trading centers
+/H20849squares/H20850arrive with different light propagation delays at an inter-
+mediate node /H20849circle/H20850at time t=0, whereupon the node may issue a
+pair of “buy” and “sell” orders back to the centers.
+A. D. WISSNER-GROSS AND C. E. FREER PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+056104-2
+
+---PAGE---
+
+that x/H20849−/H9004t/H20850/H11022y/H20849−/H20849/H9270− /H9004t/H20850/H20850, so that we are trying to maximize
+the security ratio eR/H20849/H9004t/H20850/H11013ex/H20849/H9004t/H20850/ ey/H20849/H9270−/H9004t/H20850at the respective local
+times of execution in order to ensure the sign ﬁdelity of the
+trade. Now, from the perspective of the intermediate node at
+t=0, the expectations of x, y will decay exponentially /H2085123/H20852
+back to their long-term /H20849zero/H20850means from their instanta-
+neously known values, x/H20849−/H9004t/H20850, y/H20849−/H20849
+/H9270− /H9004t/H20850/H20850:
+/H20855R/H20849/H9004t/H20850/H20856= x/H20849− /H9004t/H20850e−2ax/H9004t − y/H20849− /H20849/H9270− /H9004t/H20850/H20850e−2ay/H20849/H9270−/H9004t/H20850. /H208493/H20850
+The expected security ratio will reach an extremum when /H9004t
+satisﬁes
+0= d/H20855R/H20849/H9004t/H20850/H20856
+d/H9004t =− e−2ax/H9004t/H20849X˙ +2 axX/H20850− e−2ay/H20849/H9270−/H9004t/H20850/H20849Y˙ +2 ayY/H20850,
+where X /H11013x/H20849−/H9004t/H20850, X˙ /H11013x˙/H20849−/H9004t/H20850, Y /H11013y/H20849−/H20849/H9270− /H9004t/H20850/H20850, and
+Y˙ /H11013y˙/H20849−/H20849/H9270− /H9004t/H20850/H20850. We obtain a degenerate solution class when
+reversion occurs at a particular speed in the absence of noise,
+given by
+X˙ +2 a
+xX =0= Y˙ +2 ayY, /H208494/H20850
+and a physically relevant solution class, given by
+/H9004t
+/H9270= ay
+ax + ay
++ 1
+2/H20849ax + ay/H20850/H9270ln/H20875− X˙ +2 axX
+Y˙ +2 ayY
+/H20876. /H208495/H20850
+We note that the ﬁrst term in Eq. /H208495/H20850depends only on the
+long-term behavior of the securities, while the second term is
+sensitive to the instantaneous behavior of the securities.
+Having identiﬁed the extrema, we now constrain our
+search to maxima using the inequality
+0 /H11022d
+2/H20855R/H20849/H9004t/H20850/H20856
+d/H9004t2 = e−2ax/H9004t/H208512ax/H20849X˙ +2 axX/H20850+ X¨ +2 axX˙ /H20852
+− e−2ay/H20849/H9270−/H9004t/H20850/H208512ay/H20849Y˙ +2 ayY/H20850+ Y¨ +2 ayY˙ /H20852,
+where X¨ /H11013x¨/H20849−/H9004t/H20850and Y¨ /H11013y¨/H20849−/H20849/H9270− /H9004t/H20850/H20850. It follows that, for
+there to be a global maximum at /H9004tmax where /H9004tmax solves
+Eq. /H208495/H20850and 0 /H11349/H9004tmax /H11349/H9270, it is sufﬁcient /H20849although not nec-
+essary/H20850that the following condition be satisﬁed over the
+same range /H208490 /H11349/H9004t /H11349/H9270/H20850:
+4ax
+2X +4 axX˙ + X¨ /H110210 /H110214ay
+2Y +4 ayY˙ + Y¨ . /H208496/H20850
+Heuristically, these conditions are satisﬁed by sufﬁciently
+sharp price ﬂuctuations including, for example, the following
+generic class of locally quadratic price ﬂuctuations:
+x/H20849t/H20850= k
+0 − k1/H20849/H9004t + /H9270/H208502, /H208497a/H20850
+y/H20849t/H20850=− k2 + k3/H20849/H9004t + /H9270/H208502, /H208497b/H20850
+where
+2ax
+2k0 /H11021k1 /H11021k0//H92702,
+2ay
+2k2 /H11021k3 /H11021k2//H92702,
+ax,ay /H110211//H20849/H9270/H208812/H20850,
+which correspond to ﬂuctuations whose characteristic fre-
+quency f lies in the broad range
+max/H20849ax,ay/H20850
+/H9266/H11021f /H11021/H9270−1
+/H9266/H208812
+. /H208498/H20850
+Such ﬂuctuations should be common in the high-frequency
+trading of securities, as we now calculate. For maximally
+distant points on Earth,
+/H9270/H1101567 ms, and for adjacent trading
+centers, /H9270is even smaller /H20849e.g., /H9270/H110151.1 ms for London and
+Paris/H20850. These imply lower bounds /H20849within this example solu-
+tion class /H20850on the characteristic time between exploitable
+ﬂuctuations, f−1, of approximately 300 ms for distant trading
+centers, 5 ms for adjacent trading centers, and much lower
+still for multiple markets within a single city /H20849with different
+colocation facilities /H20850. On the other hand, typical mean-
+reversion times /H20849which determine approximate values of
+a
+x
+−1 , ay
+−1/H20850are typically far longer /H20849e.g., a half-life of 1–5 days
+for the equilibration of cross-listed shares /H2085118,20/H20852/H20850. Even in
+situations where equilibrium is reached in minutes or hours,
+Eq. /H208498/H20850therefore determines a wide interval of relevant fre-
+quencies. Crucially, this range includes the typical time
+scales exploited in high-frequency trading /H20849e.g., potentially
+proﬁtable ﬂuctuations in the 10 ms–10 s range /H2085150/H20852/H20850. These
+calculations suggest that while arbitrage between distant sites
+at the smallest relevant time scales has been technically pos-
+sible for several years, the fastest relevant arbitrage between
+nearby sites has only recently become technologically
+feasible.
+C. Example: Optimal trading locations on Earth
+For concreteness, we now calculate an example set of
+optimal locations for intermediate trading nodes under
+the simplifying assumption that such ﬂuctuations are
+high frequency /H20851f /H11271max/H20849a
+x , ay/H20850/ /H9266, implying that
+/H20841X˙
+X /H20841/H110112/H9266f /H112712 max/H20849ax , ay/H20850/H20852and comparable in magnitude but
+oppositely signed /H20849X /H11011−Y/H20850. Under these assumptions, the
+behavior-dependent logarithmic term in Eq. /H208495/H20850vanishes, and
+the optimal intermediate location simpliﬁes to an average of
+the two center locations weighted by speeds of reversion,
+/H9004t =
+/H9270ay//H20849ax + ay/H20850. /H208499/H20850
+Let us furthermore assume that, based on dimensional rea-
+soning, the speeds of reversion scale with market turnover
+velocities /H2085149/H20852.
+RELATIVISTIC STATISTICAL ARBITRAGE… PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+056104-3
+
+---PAGE---
+
+Under these assumptions, the optimal intermediate loca-
+tions are therefore midpoints weighted by turnover velocity.
+In Fig. 2 we compute the optimal intermediate locations, as
+such weighted midpoints /H20851Eq. /H208499/H20850/H20852, for all pairs of 52 major
+exchanges based on 2008 turnover velocity data reported by
+the World Federation of Exchanges /H2085149/H20852. In practice, inter-
+mediate locations could be calculated for speciﬁc pair trades
+using more precisely estimated reversion speeds, or for more
+complicated transactions involving more than two securities.
+Note that while some nodes are in regions with dense
+ﬁber-optic networks, many others are in the ocean or other
+sparsely connected regions, perhaps ultimately motivating
+the deployment of low-latency trading infrastructure at such
+remote but well-positioned locations.
+III. CONTINUUM MODEL
+In the previous example, the simplifying assumption of
+rapid ﬂuctuations allowed us to ignore the instantaneous be-
+havior of individual securities. When instantaneous behavior
+is taken into account, all points on the connecting geodesics
+between trading centers become potentially proﬁtable loca-
+tions for arbitrage nodes. Moreover, once multiple competing
+nodes accumulate near a given intermediate location, there is
+the opportunity to execute trades locally among themselves,
+effectively creating a new trading center at that location.
+Nodes at such intermediate centers would be able to execute
+local trades and act on local information or events /H20849e.g.,
+weather/H20850immediately. Consequently, we now extend our
+analysis of relativistic statistical arbitrage to chains of trad-
+ing centers along geodesics.
+A. Chain of trading centers
+Speciﬁcally, let us consider a one-dimensional chain of
+trading centers with spacing h and communication speed c
+that host correlated local securities whose log-prices sample
+some continuous function u/H20849x, t/H20850of geodesic location x and
+time t. Furthermore, assume that the chain is sufﬁciently
+dense that u/H20849x, t/H20850varies slowly on length scales of h and time
+scales of h / c. For simplicity in characterizing the propaga-
+tion of pricing information through the nodes, let us also
+assume that the local Wiener noise sources are currently
+switched off and that, due to local arbitrage, the security
+log-prices revert with common speed a toward the instanta-
+neously observed average of log-prices at nearest neighbor
+centers. We begin our analysis with three consecutive trading
+centers at locations x− h, x, x+ h. Under these assumptions,
+the Vasicek process for reversion to the instantaneously ob-
+served /H20849i.e., retarded by time h / c/H20850mean of nearest neighbor
+log-prices is given by
+du/H20849x,t/H20850= a
+/H20875
+u/H20849x + h,t − h/c/H20850+ u/H20849x − h,t − h/c/H20850
+2 − u/H20849x,t/H20850/H20876dt.
+Utilizing the assumption of slow variation on length scales of
+h and time scales of h / c to expand u to second-derivative
+order, we ﬁnd
+/H11509u/H20849x,t/H20850
+/H11509t = a
+2 /H20875u/H20873x + h,t − h
+c /H20874− u/H20849x,t/H20850+ u/H20873x − h,t − h
+c /H20874− u/H20849x,t/H20850/H20876
+/H11015a
+2 /H20900h
+/H11509u/H20873x + h
+2,t − h
+2c /H20874
+/H11509x − h
+c
+/H11509u/H20873x + h
+2,t − h
+2c /H20874
+/H11509t − h
+/H11509u/H20873x − h
+2,t − h
+2c /H20874
+/H11509x − h
+c
+/H11509u/H20873x − h
+2,t − h
+2c /H20874
+/H11509t /H20901
+= a
+2 /H20900h
+/H11509u/H20873x + h
+2,t − h
+2c /H20874
+/H11509x − h
+/H11509u/H20873x − h
+2,t − h
+2c /H20874
+/H11509x − h
+c
+/H11509u/H20873x + h
+2,t − h
+2c /H20874
+/H11509t − h
+c
+/H11509u/H20873x − h
+2,t − h
+2c /H20874
+/H11509t /H20901
+/H11015a
+2 /H20900h2
+/H11509u/H20873x,t − h
+2c /H20874
+/H11509x2 − 2h
+c
+/H11509u/H20873x,t − h
+2c /H20874
+/H11509t + O/H20873
+/H115093u
+/H11509x2 /H11509t /H20874/H20901/H11015a/H20900h2
+2
+/H115092u/H20873x,t − h
+2c /H20874
+/H11509x2 − h
+c
+/H11509u/H20873x,t − h
+2c /H20874
+/H11509t /H20901
+Shifting time forward by h / 2c, we obtain
+/H11509u/H20873x,t + h
+2c /H20874
+/H11509t /H11015a/H20875
+h2
+2
+/H115092u/H20849x,t/H20850
+/H11509x2 − h
+c
+/H11509u/H20849x,t/H20850
+/H11509t /H20876,
+and so, expanding the left hand side, we recover a form,
+/H11509u/H20849x,t/H20850
+/H11509t + h
+2c
+/H115092u/H20849x,t/H20850
+/H11509t2
+/H11015ah2
+2
+/H115092u/H20849x,t/H20850
+/H11509x2 − ah
+c
+/H11509u/H20849x,t/H20850
+/H11509t , /H2084910/H20850
+that can be expressed as a homogeneous telegraph equation
+/H2085151–57/H20852,
+A. D. WISSNER-GROSS AND C. E. FREER PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+056104-4
+
+---PAGE---
+
+/H115092u/H20849x,t/H20850
+/H11509x2 − 1
+ahc
+/H115092u/H20849x,t/H20850
+/H11509t2 − 2/H20849h/c +1 /a/H20850
+h2
+/H11509u/H20849x,t/H20850
+/H11509t =0 . /H2084911/H20850
+Previously, the telegraph equation has been widely used as a
+model for relativistic diffusion processes /H2085158/H20852and the prob-
+ability densities of security prices evolving over time
+/H2085159–62/H20852. Here, in contrast, we ﬁnd that it also models spa-
+tially distributed security prices evolving over time.
+B. Effect of arbitrage on price propagation
+As with the case of a single intermediate node examined
+earlier, we are again interested in how price ﬂuctuations
+propagate, except now for a dense chain of trading centers.
+Substituting u/H20849x, t/H20850/H11013e
+i/H20849kx−/H9275t/H20850, where k is the wave number
+and /H9275is the angular frequency, we obtain the complex dis-
+persion relation
+h2k2 = 1
+ac/h /H92752 +2 i/H9275/H20873
+1
+a + 1
+c/h /H20874, /H2084912/H20850
+which we shall now analyze in the dense limit /H20849c / h /H11271a/H20850. For
+the two cases of a, /H9275/H11270c / h and a /H11270c / h /H11270/H9275, the dispersion
+relation simpliﬁes to
+k /H110151
+h /H20881/H9275
+a /H208491+ i/H20850, /H2084913a/H20850
+k /H11015/H9275
+h/H20881ac/h /H208731+ i c/h
+/H9275/H20874, /H2084913b/H20850
+respectively. From Eqs. /H2084913a/H20850and /H2084913b/H20850, we can derive the
+phase velocities /H20849/H9275/Re k/H20850and propagation lengths /H20849/H20841Im k/H20841−1/H20850
+in the three regimes bounded by the characteristic frequen-
+cies prescribed by Eq. /H208498/H20850, as summarized in Table I. /H20849Since
+prices are nonconservative, the physical interpretation of the
+complex group velocity in this limit is not well established
+/H2085163/H20852./H20850
+In each frequency regime, we can see that the phase ve-
+locity is strongly subluminal, which is consistent with the
+telegraph equation disallowing superluminal propagation
+/H2085152,53,56,58,64,65/H20852. Note that in the absence of arbitrage
+couplings between neighboring trading centers /H20849i.e., a=0 /H20850,
+the phase velocity and propagation length both vanish, un-
+derlining the critical role of arbitrage at all frequencies.
+Let us ﬁrst examine the low-frequency regime
+/H20849
+/H9275/H11270a /H11270c / h/H20850. At low frequencies, the propagation length is
+much longer than the trading center spacing, h, and the phase
+velocity is much less than c, indicating that intermediate ar-
+bitrage has slowed—but not stopped—the propagation of
+price information through the chain, as parameterized by the
+large real refractive index,
+Re n /H11013c Re k
+/H9275/H11015c/h
+/H20881a/H9275
+/H112711. /H2084914/H20850
+In contrast, for the discrete two-center scenario we consid-
+ered earlier, in which no arbitrage transactions were executed
+at intermediate points, we have n=1.
+TABLE I. Propagation characteristics of price ﬂuctuations
+within various frequency regimes along a dense chain of trading
+centers, as derived from dispersion relation /H20851Eq. /H2084912/H20850/H20852. Phase veloci-
+ties, propagation lengths, and transparency are indicated.
+Regime Phase vel. Prop. len. Transparent
+/H9275/H11270a /H11270c / hc
+/H20881a/H9275
+c/h h/H20881a
+/H9275 Yes
+a /H11270/H9275/H11270c / hc
+/H20881a/H9275
+c/h h/H20881a
+/H9275 No
+a /H11270c / h /H11270/H9275 c/H20881a
+c/h h/H20881a
+c/h No
+FIG. 2. /H20849Color online/H20850Optimal intermediate trading node locations /H20849small circles/H20850for all pairs of 52 major securities exchanges /H20849large
+circles/H20850, calculated using Eq. /H208499/H20850as midpoints weighted by turnover velocity /H20849from 2008 data reported by the World Federation of Exchanges
+/H2085149/H20852/H20850. While some nodes are in regions with dense ﬁber-optic networks, many others are in the ocean or other sparsely connected regions.
+RELATIVISTIC STATISTICAL ARBITRAGE… PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+056104-5
+
+---PAGE---
+
+While the chain is transparent to low frequencies, the
+chain becomes opaque /H20849i.e., the propagation length is much
+less than h/H20850when we move to the intermediate-frequency
+regime /H20849a /H11270/H9275/H11270c / h/H20850at which proﬁtable arbitrage can take
+place, according to Eq. /H208498/H20850, and remains opaque in the high-
+frequency regime /H20849a /H11270c / h /H11270/H9275/H20850. The onset of opacity should
+have the effect of localizing price ﬂuctuations and attenuat-
+ing proﬁtable arbitrage between non-nearest neighbor cen-
+ters.
+Such slowing or stopping of the propagation of pricing
+information due to arbitrage is somewhat analogous to the
+refraction and scattering of light by a dielectric medium, but
+novel in an econophysical context. We note that the effect
+exists independently of any communication latency intrinsic
+to the underlying hardware infrastructure, and would expect
+to observe a similar effect wherever tradable information en-
+ters a network “medium” capable of performing local arbi-
+trage. This result also raises the possibility of establishing
+arbitrage analogs of other concepts from optics and acous-
+tics, such as reﬂection and diffraction.
+IV . CONCLUSIONS
+In summary, we have demonstrated that light propagation
+delays present new opportunities for statistical arbitrage at
+the planetary scale, and have calculated a representative map
+of locations from which to coordinate such relativistic statis-
+tical arbitrage among the world’s major securities exchanges.
+We furthermore have shown than for chains of trading cen-
+ters along geodesics, the propagation of tradable information
+is effectively slowed or stopped by such arbitrage.
+Historically, technologies for transportation and commu-
+nication have resulted in the consolidation of ﬁnancial mar-
+kets. For example, in the nineteenth century, more than 200
+stock exchanges were formed in the United States, but most
+were eliminated as the telegraph spread /H2085166/H20852. The growth of
+electronic markets has led to further consolidation in recent
+years /H2085149/H20852. Although there are advantages to centralization
+for many types of transactions, we have described a type of
+arbitrage that is just beginning to become relevant, and for
+which the trend is, surprisingly, in the direction of decentrali-
+zation. In fact, our calculations suggest that this type of ar-
+bitrage may already be technologically feasible for the most
+distant pairs of exchanges, and may soon be feasible at the
+fastest relevant time scales for closer pairs.
+Our results are both scientiﬁcally relevant because they
+identify an econophysical mechanism by which the propaga-
+tion of tradable information can be slowed or stopped, and
+technologically signiﬁcant, because they motivate the con-
+struction of relativistic statistical arbitrage trading nodes
+across the Earth’s surface.
+ACKNOWLEDGMENTS
+The authors are grateful to M. T. Baumgart, C. Cheung,
+A. L. Fitzpatrick, M. Rosenberg, D. M. Roy, and M. D.
+Welsh for very helpful conversations. C.E.F. is partially sup-
+ported by NSF Grant No. DMS-0901020.
+/H208511/H20852T. L. Bhupathi, N. Carolina J. Law Technol. 11, 377 /H208492010/H20850
+/H20851http://cite.ncjolt.org/11NCJLTech377/H20852.
+/H208512/H20852B. S. Donefer, J. Trading 5,3 1 /H208492010/H20850.
+/H208513/H20852E. R. Fernholz, Stochastic Portfolio Theory /H20849Springer, New
+York, 2002/H20850.
+/H208514/H20852E. R. Fernholz and I. Karatzas, Ann. Finance 1, 149 /H208492005/H20850.
+/H208515/H20852E. R. Fernholz and C. Maguire, Jr., Financ. Anal. J. 63,4 6
+/H208492007/H20850.
+/H208516/H20852C. W. J. Granger, J. Econometrics 16, 121 /H208491981/H20850.
+/H208517/H20852C. W. J. Granger and A. A. Weiss, in Studies in Econometrics:
+Time Series and Multivariate Statistics , edited by S. Karlin, T.
+Amemiya, and L. A. Goodman /H20849Academic Press, New York,
+1983/H20850, p. 255.
+/H208518/H20852R. F. Engle and C. W. J. Granger, Econometrica 55, 251
+/H208491987/H20850.
+/H208519/H20852Y . Lin, M. McCrae, and C. Gulati, J. Appl. Math. Decis. Sci.
+2006,1 /H208492006/H20850.
+/H2085110/H20852S. K. Hansda and P. Ray, Econ. Polit. Wkly. 38, 741 /H208492003/H20850
+/H20851http://epw.in/epw/user/loginArticleError.jsp?hid_artid/H110052509/H20852.
+/H2085111/H20852M. Monoyios and L. Sarno, J. Futures Markets 22, 285 /H208492002/H20850.
+/H2085112/H20852P. C. Liu and G. S. Maddala, J. Int. Money Finance 11, 366
+/H208491992/H20850.
+/H2085113/H20852G. Vidyamurthy, Pairs Trading: Quantitative Methods and
+Analysis /H20849Wiley, New York, 2004/H20850.
+/H2085114/H20852C. L. Dunis and R. Ho, J. Asset Manag. 6,3 3 /H208492005/H20850.
+/H2085115/H20852R. T. Baillie and T. Bollerslev, J. Finance 44, 167 /H208491989/H20850.
+/H2085116/H20852A. W. Lo and A. C. MacKinlay, Rev. Financ. Stud. 1,4 1
+/H208491988/H20850.
+/H2085117/H20852J. M. Poterba and L. H. Summers, J. Financ. Econ. 22,2 7
+/H208491988/H20850.
+/H2085118/H20852S. Koumkwa and R. Susmel, J. Appl. Econ. XI, 399 /H208492008/H20850
+/H20851http://econpapers.repec.org/article/cemjaecon/
+v_3a11_3ay_3a2008_3an_3a2_3ap_3a399-425.htm/H20852.
+/H2085119/H20852C. Doidge, G. A. Karolyi, and R. M. Stulz, J. Financ. Econ.
+91, 253 /H208492009/H20850.
+/H2085120/H20852L. Gagnon and G. A. Karolyi, J. Financ. Econ. 97,5 3 /H208492010/H20850.
+/H2085121/H20852K. F. Kroner and J. Sultan, J. Financ. Quant. Anal. 28, 535
+/H208491993/H20850.
+/H2085122/H20852D. S. Ehrman, The Handbook of Pairs Trading: Strategies Us-
+ing Equities, Options, and Futures /H20849Wiley, New York, 2005/H20850.
+/H2085123/H20852O. Vasicek, J. Financ. Econ. 5, 177 /H208491977/H20850.
+/H2085124/H20852G. E. Uhlenbeck and L. S. Ornstein, Phys. Rev. 36, 823
+/H208491930/H20850.
+/H2085125/H20852M. Kac, Am. Math. Monthly 54, 369 /H208491947/H20850.
+/H2085126/H20852P. Ehrenfest and T. Ehrenfest, Z. Phys. 8,3 1 1 /H208491907/H20850.
+/H2085127/H20852J. V oit, The Statistical Mechanics of Financial Markets , 2nd
+ed. /H20849Springer, New York, 2003/H20850.
+/H2085128/H20852R. J. Elliott and P. E. Kopp, Mathematics of Financial Mar-
+kets, 2nd ed. /H20849Springer, New York, 2005/H20850.
+/H2085129/H20852T. L. Lai and H. Xing, Statistical Models and Methods for
+Financial Markets /H20849Springer, New York, 2008/H20850.
+/H2085130/H20852J. P. Fouque, G. Papanicolaou, and K. Sircar, Derivatives in
+A. D. WISSNER-GROSS AND C. E. FREER PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+056104-6
+
+---PAGE---
+
+Financial Markets with Stochastic V olatility /H20849Cambridge Uni-
+versity Press, Cambridge, England, 2000 /H20850.
+/H2085131/H20852J. Masoliver and J. Perelló, Int. J. Theor. Appl. Finance 5, 541
+/H208492002/H20850.
+/H2085132/H20852S. Miccichè, G. Bonanno, F. Lillo, and R. N. Mantegna,
+Physica A 314, 756 /H208492002/H20850.
+/H2085133/H20852J. Perelló, J. Masoliver, and J.-P. Bouchaud, Appl. Math. Fi-
+nance 11,2 7 /H208492004/H20850.
+/H2085134/H20852N. Shephard, Stochastic V olatility: Selected Readings /H20849Oxford
+University Press, Oxford, England, 2005 /H20850.
+/H2085135/H20852J. Masoliver and J. Perelló, Quant. Finance 6, 423 /H208492006/H20850.
+/H2085136/H20852Z. Eisler, J. Perelló, and J. Masoliver, Phys. Rev. E 76, 056105
+/H208492007/H20850.
+/H2085137/H20852J. Perelló, R. Sircar, and J. Masoliver, J. Stat. Mech.: Theory
+Exp. /H208492008/H20850, P06010.
+/H2085138/H20852G. Bormetti, V . Cazzola, G. Montagna, and O. Nicrosini, J.
+Stat. Mech.: Theory Exp. 2008, P11013 /H208492008/H20850.
+/H2085139/H20852G. Bormetti, V . Cazzola, D. Delpini, G. Montagna, and O.
+Nicrosini, J. Phys.: Conf. Ser. 221, 012014 /H208492010/H20850.
+/H2085140/H20852L. Z. J. Liang, D. Lemmens, and J. Tempere, Eur. Phys. J. B
+75, 335 /H208492010/H20850.
+/H2085141/H20852R. J. Elliott, J. Van Der Hoek, and W. P. Malcolm, Quant.
+Finance 5, 271 /H208492005/H20850.
+/H2085142/H20852W. K. Bertram, Physica A 388, 2865 /H208492009/H20850.
+/H2085143/H20852S. R. Baronyan, İ. İ. Boduroğlu, and E. Şener, Manch. Sch. 78,
+114 /H208492010/H20850.
+/H2085144/H20852P. C. B. Phillips and S. Ouliaris, J. Econ. Dyn. Control 12, 205
+/H208491988/H20850.
+/H2085145/H20852H.-L. Han and M. Ogaki, Int. Rev. Econ. Finance 6, 107
+/H208491997/H20850.
+/H2085146/H20852G. Elliott, M. Jansson, and E. Pesavento, J. Bus. Econ. Stat.
+23,3 4 /H208492005/H20850.
+/H2085147/H20852P. Fortune, N. Engl. Econ. Rev. /H208492000/H20850,1 9
+/H20851http://ideas.repec.org/a/ﬁp/fedbne/y2000isepp19-44.html/H20852.
+/H2085148/H20852G. J. Alexander, E. Ors, M. A. Peterson, and P. J. Seguin, J.
+Corp. Finance 10, 549 /H208492004/H20850.
+/H2085149/H20852U. Nielsson, J. Financ. Markets 12, 229 /H208492009/H20850.
+/H2085150/H20852M. Kearns, A. Kulesza, and Y . Nevmyvaka, J. Trading 5,5 0
+/H208492010/H20850.
+/H2085151/H20852R. Fürth, Z. Phys. 2, 244 /H208491920/H20850.
+/H2085152/H20852G. I. Taylor, Proc. London Math. Soc. s2-20, 196 /H208491922/H20850.
+/H2085153/H20852S. Goldstein, Q. J. Mech. Appl. Math. 4, 129 /H208491951/H20850.
+/H2085154/H20852M. Kac, Rocky Mountain J. Math. 4, 497 /H208491974/H20850.
+/H2085155/H20852J. Masoliver, J. M. Porrà, and G. H. Weiss, Phys. Rev. E 48,
+939 /H208491993/H20850.
+/H2085156/H20852D. Mugnai, A. Ranfagni, R. Ruggeri, and A. Agresti, Phys.
+Rev. E 49, 1771 /H208491994/H20850.
+/H2085157/H20852J. Masoliver and G. H. Weiss, Phys. Rev. E 49, 3852 /H208491994/H20850.
+/H2085158/H20852J. Dunkel, P. Talkner, and P. Hänggi, Phys. Rev. D 75, 043001
+/H208492007/H20850.
+/H2085159/H20852A. Di Crescenzo and F. Pellerey, Appl. Stochastic Models Bus.
+Ind. 18, 171 /H208492002/H20850.
+/H2085160/H20852N. Ratanov, J. Appl. Math. Stochastic Anal. 2007, 72326
+/H208492007/H20850.
+/H2085161/H20852N. Ratanov, Quant. Finance 7, 575 /H208492007/H20850.
+/H2085162/H20852N. Ratanov and A. Melnikov, Stochastics 80, 247 /H208492008/H20850.
+/H2085163/H20852V . Gerasik and M. Stastna, Phys. Rev. E 81, 056602 /H208492010/H20850.
+/H2085164/H20852D. D. Joseph and L. Preziosi, Rev. Mod. Phys. 61,4 1 /H208491989/H20850.
+/H2085165/H20852D. D. Joseph and L. Preziosi, Rev. Mod. Phys. 62, 375 /H208491990/H20850.
+/H2085166/H20852P. Young, Capital Market Revolution: The Future of Markets
+in an Online World /H20849Prentice-Hall, Englewood Cliffs, NJ,
+1999/H20850.
+RELATIVISTIC STATISTICAL ARBITRAGE… PHYSICAL REVIEW E 82, 056104 /H208492010/H20850
+056104-7

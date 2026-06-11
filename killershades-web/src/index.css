@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;700;900&display=swap');
+
+:root {
+  /* Ferrari Cockpit Tokens */
+  --rosso-corsa: #D40000;
+  --giallo-modena: #FFD600;
+  --nero-daytona: #111111;
+  --leather-dark: #1A1A1A;
+  --carbon-base: #2A2A2A;
+  --carbon-highlight: #333333;
+
+  /* Typography */
+  --font-dash: 'Share Tech Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--nero-daytona);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  /* The overarching dashboard dark texture */
+  background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+  min-height: 100vh;
+}
+
+/* 
+  Scuderia Punk Carbon Fiber Utility 
+  Uses a complex repeating linear gradient to simulate a weave
+*/
+.carbon-fiber {
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424 100%);
+  background-color: #131313;
+  background-size: 20px 20px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 4px 15px rgba(0,0,0,0.5);
+  border-radius: 12px;
+}
+
+/* 
+  Ferrari Stitched Leather Accent 
+*/
+.stitched-leather {
+  background-color: var(--leather-dark);
+  border: 2px solid #333;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.stitched-leather::after {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px dashed var(--rosso-corsa);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Digital Readout Screen (like the F1 steering wheel gear indicator) */
+.digital-readout {
+  font-family: var(--font-dash);
+  color: var(--giallo-modena);
+  background-color: rgba(10, 10, 10, 0.9);
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  box-shadow: inset 0 0 10px rgba(255, 214, 0, 0.1);
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(255, 214, 0, 0.5);
+}
+
+.punk-glow {
+  text-shadow: 0 0 10px var(--rosso-corsa), 0 0 20px var(--rosso-corsa);
+}
+
+.neon-btn {
+  background-color: transparent;
+  color: var(--rosso-corsa);
+  border: 2px solid var(--rosso-corsa);
+  padding: 12px 24px;
+  font-family: var(--font-dash);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(212, 0, 0, 0.2);
+}
+
+.neon-btn:hover {
+  background-color: var(--rosso-corsa);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(212, 0, 0, 0.6);
+}
+
+.neon-btn.yellow {
+  color: var(--giallo-modena);
+  border-color: var(--giallo-modena);
+  box-shadow: 0 0 10px rgba(255, 214, 0, 0.2);
+}
+
+.neon-btn.yellow:hover {
+  background-color: var(--giallo-modena);
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 214, 0, 0.6);
+}
+
+.analog-dial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.speedometer-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #222;
+  box-shadow: inset 0 0 20px #000, 0 0 15px rgba(0,0,0,0.5);
+  background: conic-gradient(from 180deg at 50% 50%, #111 0deg, #222 180deg, #111 360deg);
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.dial-value {
+  position: absolute;
+  top: 60%;
+  font-family: var(--font-dash);
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.dial-label {
+  position: absolute;
+  top: 75%;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+}

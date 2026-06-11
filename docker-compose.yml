@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: syndicate_admin
+      POSTGRES_PASSWORD: supersecretpassword
+      POSTGRES_DB: syndicate_lake
+    volumes:
+      - timescaledb-data:/var/lib/postgresql/data
+
+  node_xgboost:
+    build: ./node_xgboost
+    depends_on:
+      - kafka
+      - timescaledb
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - DB_USER=syndicate_admin
+      - DB_PASS=supersecretpassword
+      - DB_HOST=timescaledb
+      - DB_NAME=syndicate_lake
+
+  node_consensus:
+    build: ./node_consensus
+    depends_on:
+      - kafka
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-YOUR_API_KEY_HERE}
+
+  node_wnba:
+    build: 
+      context: .
+      dockerfile: ./node_wnba_engine/Dockerfile
+    depends_on:
+      - timescaledb
+    restart: unless-stopped
+    volumes:
+      - ./node_wnba_engine/db:/app/node_wnba_engine/db
+
+  node_tt_v2:
+    build:
+      context: .
+      dockerfile: ./node_tt_v2_engine/Dockerfile
+    depends_on:
+      - timescaledb
+    restart: unless-stopped
+    env_file:
+      - ./node_tt_v2_engine/.env
+    volumes:
+      - tt_db:/app/node_tt_v2_engine/db
+      - tt_data:/app/node_tt_v2_engine/data/raw
+      - ./node_tt_v2_engine/artifacts:/app/node_tt_v2_engine/artifacts
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+
+  node_darts_cv:
+    build:
+      context: .
+      dockerfile: ./node_darts_cv_engine/Dockerfile
+    depends_on:
+      - timescaledb
+    restart: unless-stopped
+    # Add privilege/shm for Headless Xvfb display to function correctly
+    shm_size: '2gb'
+
+volumes:
+  timescaledb-data:
+  tt_db:
+  tt_data:

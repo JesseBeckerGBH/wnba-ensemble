@@ -1,0 +1,126 @@
+# Darts Betting Ensemble Configuration
+
+# Paths
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  models: "models"
+  reports: "reports"
+
+# Data Sources
+data_sources:
+  kaggle_datasets:
+    - "pdc_results"
+    - "bdo_results"
+  scraping:
+    enabled: true
+    sources:
+      - "https://www.pdc.tv/results"
+      - "https://www.dartsdatabase.co.uk"
+
+# Feature Engineering
+features:
+  rolling_windows: [3, 7, 30]  # matches
+  momentum_decay: 0.95  # exponential weighting
+  fatigue_window: 7  # days
+  min_matches_required: 10  # minimum matches for player stats
+
+# Model Configuration
+models:
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+  
+  lightgbm:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.05
+    num_leaves: 31
+    random_state: 42
+  
+  neural_network:
+    hidden_layers: [128, 64, 32]
+    dropout: 0.3
+    learning_rate: 0.001
+    batch_size: 64
+    epochs: 100
+    early_stopping_patience: 10
+    random_state: 42
+  
+  bayesian_ridge:
+    n_iter: 300
+    alpha_1: 1.0e-6
+    alpha_2: 1.0e-6
+    lambda_1: 1.0e-6
+    lambda_2: 1.0e-6
+
+# Ensemble Configuration
+ensemble:
+  method: "stacked_averaging"
+  initial_weights: [0.25, 0.25, 0.25, 0.25]  # XGB, LGBM, NN, BR
+  weight_update_frequency: "weekly"
+  min_weight: 0.05
+  max_weight: 0.60
+
+# Backtesting Configuration
+backtesting:
+  validation_method: "walk_forward"
+  initial_train_months: 12
+  test_window_weeks: 4
+  step_size_weeks: 1
+  min_train_size: 500  # minimum matches
+  
+  metrics:
+    - "brier_score"
+    - "log_loss"
+    - "roc_auc"
+    - "calibration_error"
+    - "sharpe_ratio"
+  
+  confidence_thresholds: [0.50, 0.60, 0.70, 0.80]
+
+# Calibration Configuration
+calibration:
+  method: "isotonic_regression"
+  min_samples: 100
+  drift_detection:
+    enabled: true
+    window_size: 50  # matches
+    threshold: 0.05  # Brier score change
+    
+# Incremental Learning
+incremental_learning:
+  enabled: true
+  update_frequency:
+    full_retrain: "weekly"
+    calibration_update: "daily"
+    probability_refresh: "hourly"
+  
+  online_learning:
+    enabled: true
+    learning_rate_decay: 0.99
+
+# Monitoring
+monitoring:
+  log_level: "INFO"
+  metrics_tracking: true
+  performance_alerts:
+    brier_score_threshold: 0.25
+    calibration_error_threshold: 0.10
+    drift_alert: true
+
+# Deployment
+deployment:
+  api_enabled: false
+  port: 8000
+  workers: 4
+  cache_predictions: true
+  cache_ttl_minutes: 60
+
+# Reproducibility
+random_seed: 42
+deterministic: true
