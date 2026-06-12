@@ -1,6 +1,22 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Repo-root Railway config.
+#
+# RECOMMENDED layout is TWO services, each with its own Root Directory so the
+# per-service config files are used (see DEPLOY_RAILWAY.md):
+#   • Frontend  -> Root Directory: killershades-web   (killershades-web/railway.toml)
+#   • Inference -> Root Directory: node_wnba_engine   (node_wnba_engine/railway.toml)
+#
+# This root file is the FALLBACK for a single service whose Root Directory is the
+# repo root: it builds and serves the frontend dashboard in PRODUCTION mode
+# (the old config ran `npm run dev`, a dev server that ignores Railway's $PORT).
+# ─────────────────────────────────────────────────────────────────────────────
+
 [build]
 builder = "nixpacks"
-watch = ["killershades-web/**", "node_wnba_engine/**"]
+buildCommand = "cd killershades-web && npm ci && npm run build"
+watchPatterns = ["killershades-web/**"]
 
 [deploy]
-startCommand = "cd killershades-web && npm run dev"
+startCommand = "cd killershades-web && npm run preview -- --host 0.0.0.0 --port $PORT"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 5

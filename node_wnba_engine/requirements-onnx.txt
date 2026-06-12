@@ -1,0 +1,7 @@
+# Toolchain for exporting the sklearn models to ONNX (model/export_onnx.py).
+# Install on top of the training deps (scikit-learn, xgboost, lightgbm), e.g.:
+#     pip install -r requirements.txt -r requirements-onnx.txt
+skl2onnx>=1.16.0
+onnxmltools>=1.12.0
+onnx>=1.15.0
+onnxruntime>=1.17.0

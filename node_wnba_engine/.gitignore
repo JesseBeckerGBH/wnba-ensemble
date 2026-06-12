@@ -1,0 +1,10 @@
+.env
+db/*.duckdb
+db/*.duckdb.wal
+data/raw/
+logs/
+model/artifacts/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
